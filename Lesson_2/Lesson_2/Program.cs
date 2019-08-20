@@ -31,8 +31,13 @@ namespace Lesson_2
                 Console.WriteLine("Please enter its positive integer degree: ");
                 result = ulong.TryParse(Console.ReadLine(), out power);
             } while (result == false);
+
             ulong power_result = PowNumber(number, power);
-            Console.Write(power_result.ToString());
+            Console.WriteLine("Result whith a FOR loop: {0}", power_result.ToString());
+            Console.WriteLine();
+
+            power_result = PowNumberRec(number, power);
+            Console.WriteLine("Result whith a recursion: {0}", power_result.ToString());
 
             // =============================
             Console.ReadLine();
@@ -43,7 +48,7 @@ namespace Lesson_2
         {
             Console.Write("Decimal: {0}, Binary: 0b", decimal_val.ToString());
             byte nothing = DecToBin_Rec(decimal_val);
-           // Console.Write("\n");
+            // Console.Write("\n");
         }
 
         static byte DecToBin_Rec(int decimal_val)
@@ -64,8 +69,32 @@ namespace Lesson_2
             for (int i = 1; i < (int)power; i++)
             {
                 result *= number;
+                Console.WriteLine("result={0}, power={1}", result, power);
             }
             return result;
+        }
+        // Lesson 2, Task 2
+        static ulong PowNumberRec(ulong number, ulong power)
+        {
+            ulong result = number;
+            if (power > 1)
+            {
+                if (power % 2 != 0)
+                {
+                    power--;
+                    result = PowNumberRec(number, power);
+                    Console.WriteLine("result={0}, power={1}", result, power);
+                    return result * number;
+                }
+                else
+                {
+                    power /= 2;
+                    result = PowNumberRec(number, power);
+                    Console.WriteLine("result={0}, power={1}", result, power);
+                    return result * result;
+                }
+            }
+            return result; 
         }
     }
 }
