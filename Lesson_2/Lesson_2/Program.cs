@@ -48,7 +48,6 @@ namespace Lesson_2
         {
             Console.Write("Decimal: {0}, Binary: 0b", decimal_val.ToString());
             byte nothing = DecToBin_Rec(decimal_val);
-            // Console.Write("\n");
         }
 
         static byte DecToBin_Rec(int decimal_val)
@@ -94,7 +93,7 @@ namespace Lesson_2
                     return result * result;
                 }
             }
-            return result; 
+            return result;
         }
     }
 }
