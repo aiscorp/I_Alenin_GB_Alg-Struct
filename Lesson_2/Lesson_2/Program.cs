@@ -20,18 +20,18 @@ namespace Lesson_2
             // =============================
             // Lesson 2, Task 2
             Console.WriteLine("\n \n2. Exponentiation positive integer number.");
-            int number, power;
+            ulong number, power;
             do
             {
                 Console.WriteLine("Please enter a positive integer number: ");
-                result = int.TryParse(Console.ReadLine(), out number);
+                result = ulong.TryParse(Console.ReadLine(), out number);
             } while (result == false);
             do
             {
                 Console.WriteLine("Please enter its positive integer degree: ");
-                result = int.TryParse(Console.ReadLine(), out power);
+                result = ulong.TryParse(Console.ReadLine(), out power);
             } while (result == false);
-            ulong power_result = (ulong)PowNumber(number, power);
+            ulong power_result = PowNumber(number, power);
             Console.Write(power_result.ToString());
 
             // =============================
@@ -43,7 +43,7 @@ namespace Lesson_2
         {
             Console.Write("Decimal: {0}, Binary: 0b", decimal_val.ToString());
             byte nothing = DecToBin_Rec(decimal_val);
-            Console.Write("\n");
+           // Console.Write("\n");
         }
 
         static byte DecToBin_Rec(int decimal_val)
@@ -58,10 +58,10 @@ namespace Lesson_2
             return 0;
         }
         // Lesson 2, Task 2
-        static int PowNumber(int number, int power)
+        static ulong PowNumber(ulong number, ulong power)
         {
-            int result = number;
-            for (int i = 1; i < power; i++)
+            ulong result = number;
+            for (int i = 1; i < (int)power; i++)
             {
                 result *= number;
             }
