@@ -111,7 +111,79 @@ namespace Lesson_3
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            int armax = 100000;
+            Console.WriteLine("Ivan Alenin - Lesson 3 - Tasks 2 & 4");
+            Console.WriteLine("... Array generation ...");
+            int[] array = new int[armax];
+            int[] arraybuff = new int[armax];
+            NewRandomArray(armax, array);
+            TypeArray(array, true);
+
+            armax = 100;
+            Console.WriteLine("Bubble sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Shaker sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Insertion sorting:");
+            Array.Copy(array, arraybuff, armax);
+            InsertionSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            armax = 1000;
+            Console.WriteLine("Bubble sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Shaker sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Insertion sorting:");
+            Array.Copy(array, arraybuff, armax);
+            InsertionSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            armax = 10000;
+            Console.WriteLine("Bubble sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Shaker sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Insertion sorting:");
+            Array.Copy(array, arraybuff, armax);
+            InsertionSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            armax = 10000;
+            Console.WriteLine("Bubble sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Shaker sorting:");
+            Array.Copy(array, arraybuff, armax);
+            BubleSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.WriteLine("Insertion sorting:");
+            Array.Copy(array, arraybuff, armax);
+            InsertionSort(ref arraybuff, armax);
+            TypeArray(arraybuff, false);
+
+            Console.ReadKey();
         }
     }
 }
