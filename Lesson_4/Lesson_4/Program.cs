@@ -20,7 +20,7 @@ namespace Lesson_4
         {
             Console.WriteLine("Lesson 4 - Ivan Alenin - Horse task");
 
-            for (int i = 3; i < 8; ++i)
+            for (int i = 3; i <= 8; ++i)
             {
                 board_x_max = i;
                 board_y_max = i;
